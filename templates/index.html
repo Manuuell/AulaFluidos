@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Aula de Fluidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<!-- Barra de navegación -->
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="#">Propiedades de los fluidos</a>
+                <a href="#">Estática de fluidos</a>
+                <a href="#">Cinemática de fluidos</a>
+                <a href="#">Dinámica de fluidos</a>
+                <a href="#">Análisis dimensional</a>
+                <a href="#">Flujo en tuberías</a>
+                <a href="#">Flujo en canales abiertos</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+
+<!-- Sección principal de la página de inicio -->
+<main class="hero">
+    <div class="contenido">
+        <h1>Explora los Fundamentos de<br>la Mecánica de Fluidos</h1>
+        <p>Herramienta interactiva para estudiantes de ingeniería de la Universidad Tecnológica</p>
+        <div class="cards">
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/chat.png" alt="Icono Chatbot"/>
+                <h3>Chatbot de Ayuda</h3>
+                <p>Obtén respuestas instantáneas sobre mecánica de fluidos con nuestro asistente virtual.</p>
+            </div>
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/calculator.png" alt="Icono Fórmula"/>
+                <h3>Calculadoras y Ecuaciones</h3>
+                <p>Resuelve problemas complejos con nuestras calculadoras y ecuaciones personalizadas para fluidos.</p>
+            </div>
+            <div class="card">
+                <img src="https://img.icons8.com/ios-filled/50/000000/settings.png" alt="Icono Simulador"/>
+
+                <h3>Simulaciones Interactivas</h3>
+                <p>Explora conceptos mediante simuladores interactivos de fluidos, desde caudal hasta presión.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Pie de página -->
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
+
+</body>
+</html>

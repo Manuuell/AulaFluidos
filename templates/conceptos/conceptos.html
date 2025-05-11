@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Conceptos – Aula de Fluidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/conceptos.css') }}">
+
+    <!-- Incluir MathJax para renderizar ecuaciones matemáticas -->
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="#">Propiedades de los fluidos</a>
+                <a href="#">Estática de fluidos</a>
+                <a href="#">Cinemática de fluidos</a>
+                <a href="#">Dinámica de fluidos</a>
+                <a href="#">Análisis dimensional</a>
+                <a href="#">Flujo en tuberías</a>
+                <a href="#">Flujo en canales abiertos</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+
+<!-- Sección de conceptos -->
+<main class="conceptos">
+    <h2>Conceptos de Mecánica de Fluidos</h2>
+
+    <!-- Concepto 1: Flujo en Tuberías -->
+    <div class="concepto">
+        <h3>Flujo en Tuberías</h3>
+        <p>El flujo de fluido en una tubería se describe mediante la ecuación de continuidad:</p>
+        <p>
+            $$ Q = v \cdot A $$
+        </p>
+        <p>
+            Donde \( Q \) es el caudal, \( v \) es la velocidad del fluido y \( A \) es el área de la sección transversal de la tubería.
+        </p>
+    </div>
+    <section class="concepto">
+        <h3>Fluido y su Comportamiento</h3>
+        <p>
+            El fluido es cualquier sustancia que no tiene forma definida, y puede ser un gas o un líquido. Se caracteriza por su capacidad de fluir y cambiar de forma cuando se le aplica una fuerza. Los fluidos pueden experimentar diferentes comportamientos dependiendo de las condiciones de presión, temperatura y velocidad a las que se les someta. Por ejemplo, el agua es un fluido que tiene una viscosidad baja, lo que le permite fluir fácilmente a través de tuberías, mientras que el aceite tiene una viscosidad más alta y fluye más lentamente.
+        </p>
+        <p>
+            El comportamiento de los fluidos es descrito por la Mecánica de Fluidos, una rama de la física que estudia el movimiento de los líquidos y gases. Esta disciplina se basa en principios fundamentales como la ley de la conservación de la masa, el principio de Pascal, y la ecuación de Bernoulli. Los estudios de los fluidos tienen aplicaciones prácticas en diversas áreas, como la ingeniería, la meteorología y la medicina.
+        </p>
+    </section>
+
+    <section class="concepto">
+        <h3>Presión de Fluido</h3>
+        <p>
+            La presión de un fluido es la fuerza ejercida por las moléculas del fluido sobre las superficies en contacto con él. Esta presión varía con la profundidad y la densidad del fluido. En un fluido en reposo, la presión aumenta con la profundidad debido a la gravedad, y es mayor en la base de un recipiente lleno de agua que en la parte superior.
+        </p>
+        <p>
+            Un concepto importante relacionado con la presión de los fluidos es la Ley de Pascal, que establece que cualquier cambio en la presión aplicado a un fluido en reposo se transmite de manera uniforme a todas las partes del fluido. Esto es fundamental en aplicaciones como los frenos hidráulicos y los ascensores hidráulicos.
+        </p>
+    </section>
+
+    <section class="concepto">
+        <h3>Caudal</h3>
+        <p>
+            El caudal es la cantidad de fluido que pasa a través de una sección transversal de un conducto en un intervalo de tiempo. Se mide en unidades como litros por segundo (L/s) o metros cúbicos por hora (m³/h). El caudal es un parámetro crucial en sistemas de tuberías, ya que determina la cantidad de fluido que se puede transportar sin exceder la capacidad del sistema.
+        </p>
+        <p>
+            El caudal se puede clasificar en dos tipos: caudal volumétrico y caudal másico. El caudal volumétrico se refiere al volumen de fluido que pasa por una sección transversal por unidad de tiempo, mientras que el caudal másico está relacionado con la masa del fluido transportado. Ambos tipos son utilizados en diferentes aplicaciones dependiendo de los requisitos de cada sistema.
+        </p>
+    </section>
+
+
+
+    <section class="concepto">
+        <h3>Teoría de la Ecuación de Bernoulli</h3>
+        <p>
+            La ecuación de Bernoulli es uno de los principios fundamentales en la dinámica de fluidos. Esta ecuación establece que, en un flujo fluido ideal (sin viscosidad) y en un sistema cerrado, la suma de la presión, la energía cinética y la energía potencial es constante a lo largo de una línea de flujo.
+        </p>
+        <p>
+            La ecuación de Bernoulli se puede escribir de la siguiente manera:
+            <br><br>
+            P + 1/2 * ρ * v² + ρ * g * h = constante
+            <br><br>
+            donde:
+        <ul>
+            <li>P es la presión del fluido.</li>
+            <li>ρ es la densidad del fluido.</li>
+            <li>v es la velocidad del fluido.</li>
+            <li>g es la aceleración debida a la gravedad.</li>
+            <li>h es la altura sobre un nivel de referencia.</li>
+        </ul>
+        </p>
+
+    </section>
+
+    <!-- Concepto 2: Presión del Fluido -->
+    <div class="concepto">
+        <h3>Presión del Fluido</h3>
+        <p>La presión en un fluido en reposo se calcula usando la fórmula de la ley de Pascal:</p>
+        <p>
+            $$ P = \frac{\rho \cdot g \cdot h}{A} $$
+        </p>
+        <p>
+            Donde \( \rho \) es la densidad del fluido, \( g \) es la aceleración debida a la gravedad, \( h \) es la altura del fluido, y \( A \) es el área de la superficie.
+        </p>
+    </div>
+
+    <!-- Concepto 3: Teoría de la Viscosidad -->
+    <div class="concepto">
+        <h3>Teoría de la Viscosidad</h3>
+        <p>La viscosidad describe la resistencia interna de un fluido al flujo. La ecuación de Poiseuille para el flujo laminar es:</p>
+        <p>
+            $$ Q = \frac{\pi \cdot r^4 \cdot \Delta P}{8 \cdot \mu \cdot L} $$
+        </p>
+        <p>
+            Donde \( r \) es el radio de la tubería, \( \Delta P \) es la diferencia de presión, \( \mu \) es la viscosidad del fluido y \( L \) es la longitud de la tubería.
+        </p>
+    </div>
+
+    <!-- Concepto 4: Ecuación de Bernoulli -->
+    <div class="concepto">
+        <h3>Ecuación de Bernoulli</h3>
+        <p>La ecuación de Bernoulli es fundamental para entender el comportamiento de los fluidos en movimiento:</p>
+        <p>
+            $$ P + \frac{1}{2} \rho v^2 + \rho gh = \text{constante} $$
+        </p>
+        <p>
+            Donde \( P \) es la presión del fluido, \( v \) es la velocidad, \( g \) es la aceleración debida a la gravedad y \( h \) es la altura con respecto a un punto de referencia.
+        </p>
+    </div>
+
+    <!-- Concepto 5: Ley de Darcy -->
+    <div class="concepto">
+        <h3>Ley de Darcy</h3>
+        <p>La ley de Darcy describe el flujo de un fluido a través de un medio poroso:</p>
+        <p>
+            $$ Q = -K \cdot A \cdot \frac{\Delta h}{L} $$
+        </p>
+        <p>
+            Donde \( K \) es la conductividad hidráulica del medio, \( A \) es el área, \( \Delta h \) es la diferencia de altura y \( L \) es la longitud del medio poroso.
+        </p>
+    </div>
+
+    <!-- Nuevos conceptos -->
+
+    <div class="concepto">
+        <h3>Densidad (ρ)</h3>
+        <p>
+            La densidad es la masa por unidad de volumen de un fluido. Fórmula: \( \rho = \frac{m}{V} \) (kg/m³). Es clave para determinar propiedades como el peso específico.
+        </p>
+    </div>
+
+    <div class="concepto">
+        <h3>Flujo Laminar vs. Turbulento</h3>
+        <p>
+            El flujo laminar es ordenado y en capas, mientras que el turbulento es caótico. Determinado por el Número de Reynolds \( \left( Re = \frac{ \rho v D }{\mu} \right) \).
+        </p>
+    </div>
+
+    <div class="concepto">
+        <h3>Presión Hidrostática</h3>
+        <p>
+            La presión ejercida por un fluido en reposo debido a la gravedad. Fórmula: \( P = \rho g h \) (Pa). Depende de la densidad, gravedad y altura del fluido.
+        </p>
+    </div>
+
+    <div class="concepto">
+        <h3>Viscosidad (μ)</h3>
+        <p>
+            La resistencia de un fluido a fluir. Se mide en Pa·s o kg/(m·s). Los fluidos viscosos, como el aceite, fluyen más lentamente que los menos viscosos, como el agua.
+        </p>
+    </div>
+
+    <div class="concepto">
+        <h3>Caudal Másico</h3>
+        <p>
+            La masa de fluido que pasa por una sección por unidad de tiempo. Fórmula: \( \dot{m} = \rho Q \) (kg/s), donde \( Q \) es el caudal volumétrico.
+        </p>
+    </div>
+
+    <div class="concepto">
+        <h3>Fuerza de Flotación</h3>
+        <p>
+            El empuje hacia arriba que ejerce un fluido sobre un objeto sumergido. Fórmula: \( F_b = \rho g V \) (N), según el principio de Arquímedes.
+        </p>
+    </div>
+
+
+</main>
+
+<!-- Pie de página -->
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
+
+</body>
+</html>

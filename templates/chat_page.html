@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat de Ayuda | Aula de Fluidos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">Aula de Fluidos</div>
+  <nav class="menu">
+    <a href="/">Inicio</a>
+    <a href="/conceptos">Conceptos</a>
+    <div class="dropdown">
+      <a href="#">Teoría <span class="arrow">▼</span></a>
+      <div class="dropdown-content">
+        <a href="#">Propiedades de los fluidos</a>
+        <a href="#">Estática de fluidos</a>
+        <a href="#">Cinemática de fluidos</a>
+        <a href="#">Dinámica de fluidos</a>
+        <a href="#">Análisis dimensional</a>
+        <a href="#">Flujo en tuberías</a>
+        <a href="#">Flujo en canales abiertos</a>
+      </div>
+    </div>
+    <a href="/simulaciones">Simulaciones</a>
+    <a href="/chat-page">Chat de ayuda</a>
+  </nav>
+</header>
+
+
+<main class="chat-page">
+  <div class="chat-container">
+    <h2>Chat de ayuda</h2>
+    <div id="chat-box" class="chat-box"></div>
+    <div class="chat-input">
+      <textarea id="user-input" placeholder="Escribe tu pregunta..." rows="3"></textarea>
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+</main>
+
+<script>
+
+  async function sendMessage() {
+    const input = document.getElementById("user-input");
+    const message = input.value;
+    const chatBox = document.getElementById("chat-box");
+
+    if (!message.trim()) return;
+
+    chatBox.innerHTML += `<div class="message user-message"><strong>Tú:</strong> ${message}</div>`;
+    input.value = "";
+
+    const res = await fetch("/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message }),
+    });
+
+    const data = await res.json();
+    if (data.reply) {
+      chatBox.innerHTML += `<div class="message bot-message"><strong>Bot:</strong> ${data.reply}</div>`;
+    } else {
+      chatBox.innerHTML += `<div class="message bot-message"><strong>Bot:</strong> Error: ${data.error}</div>`;
+    }
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+</script>
+
+<footer class="footer">
+  © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
+
+</body>
+</html>

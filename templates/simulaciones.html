@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simulaciones – Aula de Fluidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="#">Propiedades de los fluidos</a>
+                <a href="#">Estática de fluidos</a>
+                <a href="#">Cinemática de fluidos</a>
+                <a href="#">Dinámica de fluidos</a>
+                <a href="#">Análisis dimensional</a>
+                <a href="#">Flujo en tuberías</a>
+                <a href="#">Flujo en canales abiertos</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+
+<!-- Simulaciones -->
+<section class="simulaciones">
+    <h2>Simulaciones Interactivas</h2>
+
+    <!-- Simulación: Presión del Fluido y Flujo -->
+    <div class="sim-card">
+        <img
+                src="{{ url_for('static', filename='img/simulador1.jpg') }}"
+                alt="Simulación Presión del Fluido"
+                class="sim-img"
+        />
+        <div class="sim-content">
+            <h3>Presión del Fluido y Flujo</h3>
+            <p>
+                Manipula la densidad, gravedad y profundidad del fluido para observar cómo varía la presión.
+                Esta simulación es desarrollada por <strong>PhET – University of Colorado Boulder</strong>.
+            </p>
+            <iframe
+                    src="https://phet.colorado.edu/sims/cheerpj/fluid-pressure-and-flow/latest/fluid-pressure-and-flow.html?simulation=fluid-pressure-and-flow&locale=es"
+                    width="100%"
+                    height="600px"
+                    style="border: none;">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Simulación: Under Pressure -->
+    <div class="sim-card">
+        <img
+                src="{{ url_for('static', filename='img/simulador3.png') }}"
+                alt="Simulación Under Pressure"
+                class="sim-img"
+        />
+        <div class="sim-content">
+            <h3>Under Pressure</h3>
+            <p>
+                Explora cómo la presión cambia en diferentes escenarios al comprimir gas y líquido.
+                Simulación desarrollada por <strong>PhET Interactive Simulations</strong>.
+            </p>
+            <iframe
+                    src="https://phet.colorado.edu/sims/cheerpj/fluid-pressure-and-flow/latest/fluid-pressure-and-flow.html?simulation=fluid-pressure-and-flow&locale=es"
+                    width="100%"
+                    height="600px"
+                    style="border: none;">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Simulación: Torre de Agua -->
+    <div class="sim-card">
+        <img
+                src="{{ url_for('static', filename='img/simulador4.png') }}"
+                alt="Simulación Torre de Agua"
+                class="sim-img"
+        />
+        <div class="sim-content">
+            <h3>Torre de Agua</h3>
+            <p>
+                Explora cómo varía la presión y el flujo al llenar una torre de agua.
+                Simulación desarrollada por <strong>PhET Interactive Simulations</strong>.
+            </p>
+            <iframe
+                    src="https://phet.colorado.edu/sims/cheerpj/fluid-pressure-and-flow/latest/fluid-pressure-and-flow.html?simulation=fluid-pressure-and-flow&locale=es"
+                    width="100%"
+                    height="600px"
+                    style="border: none;">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Pie de página -->
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
+
+</body>
+</html>
