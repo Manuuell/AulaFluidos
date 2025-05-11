@@ -1,10 +1,139 @@
+<!-- templates/teoria/flujo_tuberias.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flujo en Tuberías – Aula de Fluidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flujo_tuberias.css') }}">
+    <!-- MathJax para fórmulas matemáticas -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/teoria/generalidades">Generalidades</a>
+                <a href="/teoria/propiedades">Propiedades</a>
+                <a href="/teoria/estatica">Estática</a>
+                <a href="/teoria/flotacion">Flotación</a>
+                <a href="/teoria/cinematica">Cinemática</a>
+                <a href="/teoria/bernoulli">Bernoulli</a>
+                <a href="/teoria/flujo_tuberias">Flujo en tuberías</a>
+                <a href="/teoria/maquinas_flujo">Máquinas de flujo</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/ejercicios">Calculadora</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+<main class="contenido">
+    <h1>Flujo en Tuberías</h1>
+    <section class="seccion">
+        <h2>Introducción</h2>
+        <p>
+            El estudio del flujo en tuberías es fundamental en la mecánica de fluidos, ya que permite diseñar y optimizar redes hidráulicas, sistemas de abastecimiento de agua, conductos industriales y muchas otras aplicaciones prácticas.
+            Una comprensión precisa de este tema facilita el manejo eficiente de recursos, minimiza las pérdidas energéticas y asegura el funcionamiento seguro y económico de cualquier instalación que transporte fluidos.
+        </p>
+    </section>
+
+    <section class="seccion">
+        <h2>Régimen del Flujo</h2>
+        <p>El fluido puede presentar distintos tipos de flujo en función del número de Reynolds (\(\mathrm{Re}\)):</p>
+        <ul>
+            <li><strong>Flujo Laminar (\(\mathrm{Re} &lt; 2000\)):</strong> capas paralelas con perfil parabólico.</li>
+            <li><strong>Flujo de Transición (\(2000 &lt; \mathrm{Re} &lt; 4000\)):</strong> régimen intermedio, puede volverse turbulento.</li>
+            <li><strong>Flujo Turbulento (\(\mathrm{Re} &gt; 4000\)):</strong> movimiento caótico y gran mezcla.</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Número de Reynolds</h2>
+        <p>Magnitud adimensional que determina el tipo de flujo:</p>
+        <p class="formula">
+            \[
+            \mathrm{Re} = \frac{\rho \cdot v \cdot D}{\mu} \quad;\quad
+            \mathrm{Re} = \frac{v \cdot D}{\nu}
+            \]
+        </p>
+    </section>
+
+    <section class="seccion">
+        <h2>Pérdidas por Fricción (Darcy–Weisbach)</h2>
+        <p>Pérdida energética por fricción calculada por la ecuación de Darcy–Weisbach:</p>
+        <p class="formula">
+            \[
+            h_f = f \cdot \frac{L}{D} \cdot \frac{v^2}{2g}
+            \]
+        </p>
+        <ul>
+            <li><strong>\(h_f\)</strong>: pérdida de carga (m)</li>
+            <li><strong>\(f\)</strong>: factor de fricción</li>
+            <li><strong>\(L\)</strong>: longitud del tramo (m)</li>
+            <li><strong>\(D\)</strong>: diámetro interno (m)</li>
+            <li><strong>\(v\)</strong>: velocidad media (m/s)</li>
+            <li><strong>\(g\)</strong>: gravedad (9.81 m/s²)</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Factor de Fricción y Diagrama de Moody</h2>
+        <p>El factor de fricción (\(f\)) depende de Reynolds y la rugosidad relativa (\(\varepsilon/D\)), determinada por el Diagrama de Moody.</p>
+        <p>La rugosidad relativa es la relación entre la rugosidad absoluta (\(\varepsilon\)) y el diámetro de la tubería (\(D\)).</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Pérdidas Menores</h2>
+        <p>Pérdidas adicionales causadas por accesorios como codos y válvulas:</p>
+        <p class="formula">
+            \[
+            h_m = \sum K_i \cdot \frac{v^2}{2g}
+            \]
+        </p>
+        <ul>
+            <li><strong>\(K_i\)</strong>: coeficiente del accesorio</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Ecuación de Continuidad en Tuberías</h2>
+        <p>Garantiza la conservación de masa del fluido:</p>
+        <p class="formula">
+            \[
+            Q = A \cdot v = \text{constante}
+            \]
+        </p>
+        <ul>
+            <li><strong>\(Q\)</strong>: caudal volumétrico (m³/s)</li>
+            <li><strong>\(A\)</strong>: área transversal (m²)</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Aplicaciones Prácticas</h2>
+        <ul>
+            <li>Sistemas de abastecimiento de agua potable</li>
+            <li>Riego agrícola</li>
+            <li>Procesos químicos y petroquímicos</li>
+            <li>Sistemas de climatización</li>
+            <li>Redes de distribución de gas</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
 
 </body>
 </html>

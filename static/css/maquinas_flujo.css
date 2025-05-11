@@ -1,0 +1,54 @@
+/* static/css/maquinas_flujo.css */
+
+.contenido {
+    margin: 80px auto 40px;
+    padding: 40px 30px;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contenido h1 {
+    text-align: center;
+    color: #003f91;
+    margin: 0 0 40px;
+    padding-top: 10px;
+}
+
+.seccion {
+    margin-bottom: 40px;
+    padding-top: 10px;
+}
+
+.seccion h2 {
+    color: #0056b3;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.seccion p,
+.seccion ul {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin: 0 0 15px;
+    padding-left: 10px;
+}
+
+.seccion ul {
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+.formula {
+    display: block;
+    font-family: "Courier New", monospace;
+    background: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 12px 0;
+    color: #222;
+    text-align: center;
+}

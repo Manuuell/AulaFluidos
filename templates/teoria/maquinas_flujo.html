@@ -1,10 +1,119 @@
+<!-- templates/teoria/maquinas_flujo.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Máquinas de Flujo – Aula de Fluidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/maquinas_flujo.css') }}">
+    <!-- MathJax para renderizar fórmulas -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/teoria/generalidades">Generalidades</a>
+                <a href="/teoria/propiedades">Propiedades</a>
+                <a href="/teoria/estatica">Estática</a>
+                <a href="/teoria/flotacion">Flotación</a>
+                <a href="/teoria/cinematica">Cinemática</a>
+                <a href="/teoria/bernoulli">Bernoulli</a>
+                <a href="/teoria/flujo_tuberias">Flujo en tuberías</a>
+                <a href="/teoria/maquinas_flujo">Máquinas de flujo</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/ejercicios">Calculadora</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+<main class="contenido">
+    <h1>Máquinas de Flujo: Potencia y Eficiencia</h1>
+
+    <section class="seccion">
+        <h2>Introducción</h2>
+        <p>Las máquinas de flujo transforman energía mecánica en energía de un fluido (bombas) o viceversa (turbinas). Son esenciales en sistemas hidráulicos, redes de abastecimiento, riego, climatización e industria en general.</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Potencia Hidráulica Teórica</h2>
+        <p>La potencia teórica necesaria para elevar o mover un caudal <em>Q</em> a una altura <em>H</em> se calcula como:</p>
+        <p class="formula">
+            \[
+            P_h = \rho\,g\,Q\,H
+            \]
+        </p>
+        <ul>
+            <li><strong>\(P_h\)</strong>: potencia hidráulica [W]</li>
+            <li><strong>\(\rho\)</strong>: densidad del fluido [kg/m³]</li>
+            <li><strong>\(g\)</strong>: gravedad (9.81 m/s²)</li>
+            <li><strong>\(Q\)</strong>: caudal [m³/s]</li>
+            <li><strong>\(H\)</strong>: altura manométrica [m]</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Eficiencia de la Máquina</h2>
+        <p>La eficiencia global (\(\eta\)) de una bomba o turbina es la relación entre la potencia hidráulica y la potencia suministrada o generada:</p>
+        <p class="formula">
+            \[
+            \eta = \frac{P_h}{P_{\text{entrada}}}
+            \]
+        </p>
+        <ul>
+            <li><strong>\(\eta\)</strong>: eficiencia (adimensional, típicamente 0.6–0.9)</li>
+            <li><strong>\(P_{\text{entrada}}\)</strong>: potencia mecánica en el eje [W]</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Tipos de Máquinas</h2>
+        <ul>
+            <li><strong>Bombas centrífugas:</strong> ideales para altos caudales y bajas alturas.</li>
+            <li><strong>Bombas de desplazamiento positivo:</strong> generan altas presiones con caudales más bajos.</li>
+            <li><strong>Turbinas hidráulicas:</strong> Pelton, Francis y Kaplan según altura y caudal disponibles.</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Ejemplo de Cálculo</h2>
+        <p>Se desea bombear agua (\(\rho=1000\) kg/m³) con caudal \(Q=0.05\) m³/s a una altura de \(H=20\) m. ¿Cuál es la potencia hidráulica teórica?</p>
+        <p class="formula">
+            \[
+            P_h = 1000 \times 9.81 \times 0.05 \times 20 = 9810\ \text{W}
+            \]
+        </p>
+        <p>Si la bomba tiene una eficiencia \(\eta=0.75\), la potencia en el eje es:</p>
+        <p class="formula">
+            \[
+            P_{\text{entrada}} = \frac{9810}{0.75} \approx 13080\ \text{W}
+            \]
+        </p>
+    </section>
+
+    <section class="seccion">
+        <h2>Aplicaciones Prácticas</h2>
+        <ul>
+            <li>Bombas de agua en redes de abastecimiento y riego.</li>
+            <li>Circulación de agua en sistemas de calefacción y refrigeración.</li>
+            <li>Generación de energía en centrales hidroeléctricas.</li>
+            <li>Procesos industriales: transporte de fluidos y dosificación.</li>
+        </ul>
+    </section>
+</main>
+
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
 
 </body>
 </html>
