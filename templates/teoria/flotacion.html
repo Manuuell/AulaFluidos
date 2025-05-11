@@ -6,6 +6,8 @@
     <title>Flotación y Estabilidad – Aula de Fluidos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/flotacion.css') }}">
+    <!-- MathJax para renderizar fórmulas LaTeX -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -39,7 +41,9 @@
     <section class="seccion">
         <h2>Principio de Arquímedes</h2>
         <p>Un cuerpo total o parcialmente sumergido en un fluido estático recibe un empuje hacia arriba igual al peso del volumen de fluido desplazado:</p>
-        <p class="formula">E = ρ·g·V<sub>d</sub>  &nbsp; [N]</p>
+        <p class="formula">$$
+            E = \rho \,g\,V_{d}
+            $$</p>
         <ul>
             <li><strong>ρ</strong>: densidad del fluido (kg/m³).</li>
             <li><strong>g</strong>: aceleración de la gravedad (9.81 m/s²).</li>
@@ -59,8 +63,10 @@
 
     <section class="seccion">
         <h2>Metacentro y Metacentricidad</h2>
-        <p>Cuando un cuerpo se inclina una pequeña ángulo, el empuje se reconstruye y su línea pasa por un nuevo centro de flotación. El punto de intersección entre la línea de empuje original y la nueva es el <strong>Metacentro (M)</strong>. </p>
-        <p class="formula">GM = BM – BG</p>
+        <p>Cuando un cuerpo se inclina un pequeño ángulo, el empuje se reconstruye y su línea pasa por un nuevo centro de flotación. El punto de intersección entre la línea de empuje original y la nueva es el <strong>Metacentro (M)</strong>.</p>
+        <p class="formula">$$
+            GM = BM - BG
+            $$</p>
         <ul>
             <li><strong>BM</strong> = Inercia de la sección de flotación / V<sub>d</sub>.</li>
             <li><strong>BG</strong> = distancia vertical entre B (centro de empuje) y G.</li>
@@ -79,8 +85,10 @@
 
     <section class="seccion">
         <h2>Ejemplo Numérico</h2>
-        <p>Un prisma de madera de densidad 600 kg/m³ flota en agua (ρ=1000 kg/m³). ¿Qué fracción de su volumen queda sumergida?</p>
-        <p class="formula">V<sub>d</sub> / V = ρ<sub>prisma</sub> / ρ<sub>agua</sub> = 600/1000 = 0.6</p>
+        <p>Un prisma de madera de densidad 600 kg/m³ flota en agua (ρ = 1000 kg/m³). ¿Qué fracción de su volumen queda sumergida?</p>
+        <p class="formula">$$
+            \frac{V_{d}}{V} \;=\; \frac{\rho_{\text{prisma}}}{\rho_{\text{agua}}} \;=\; \frac{600}{1000} \;=\; 0.6
+            $$</p>
         <p>El 60 % del volumen queda sumergido, y el 40 % emerge sobre la superficie.</p>
     </section>
 

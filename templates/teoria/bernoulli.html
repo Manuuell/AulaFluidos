@@ -1,10 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ecuación de Bernoulli – Aula de Fluidos</title>
+
+    <!-- CSS global y específico -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bernoulli.css') }}">
+
+    <!-- MathJax para renderizar las fórmulas LaTeX -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/teoria/generalidades">Generalidades</a>
+                <a href="/teoria/propiedades">Propiedades</a>
+                <a href="/teoria/estatica">Estática</a>
+                <a href="/teoria/flotacion">Flotación</a>
+                <a href="/teoria/cinematica">Cinemática</a>
+                <a href="/teoria/bernoulli">Bernoulli</a>
+                <a href="/teoria/flujo_tuberias">Flujo en tuberías</a>
+                <a href="/teoria/maquinas_flujo">Máquinas de flujo</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/ejercicios">Calculadora</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+<main class="contenido">
+    <h1>Ecuación de Bernoulli</h1>
+
+    <section class="seccion">
+        <h2>Introducción</h2>
+        <p>El principio de Bernoulli, formulado por Daniel Bernoulli, relaciona presión, velocidad y altura en un fluido ideal en flujo estable. Es una de las piedras angulares de la dinámica de fluidos.</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Forma General</h2>
+        <p>Para un fluido incompresible y sin viscosidad:</p>
+        <p class="formula">$$
+            P + \tfrac12 \,\rho\, v^2 + \rho\, g\, h = \mathrm{constante}
+            $$</p>
+        <ul>
+            <li><strong>P</strong>: presión [Pa]</li>
+            <li><strong>ρ</strong>: densidad [kg/m³]</li>
+            <li><strong>v</strong>: velocidad [m/s]</li>
+            <li><strong>g</strong>: gravedad (9.81 m/s²)</li>
+            <li><strong>h</strong>: altura sobre referencia [m]</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Hipótesis y Limitaciones</h2>
+        <p>Para aplicar correctamente la ecuación de Bernoulli es necesario cumplir ciertos supuestos:</p>
+        <ul>
+            <li><strong>Flujo estacionario:</strong> las propiedades no varían en el tiempo en un punto fijo.</li>
+            <li><strong>Fluido ideal (no viscoso):</strong> no hay pérdida de energía por fricción.</li>
+            <li><strong>Incompresible:</strong> densidad constante (ρ = cte).</li>
+            <li><strong>Línea de corriente única:</strong> se aplica sobre una misma trayectoria.</li>
+        </ul>
+        <p>Si no se cumplen, debe considerarse la viscosidad o cambios de densidad, usando las ecuaciones de Navier–Stokes.</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Ejemplo Práctico</h2>
+        <p>Flujo horizontal sin cambio de altura entre dos secciones:</p>
+        <ul>
+            <li><strong>Sección 1:</strong> \(v_1 = 2\text{ m/s}\), \(P_1 = 200\,000\text{ Pa}\).</li>
+            <li><strong>Sección 2:</strong> \(v_2 = 6\text{ m/s}\), \(P_2 = ?\).</li>
+            <li><strong>ρ:</strong> 1000 kg/m³.</li>
+        </ul>
+        <p>Bernoulli simplificado:</p>
+        <p class="formula">$$
+            P_1 + \tfrac12\,\rho\,v_1^2 = P_2 + \tfrac12\,\rho\,v_2^2
+            $$</p>
+        <p>Despejando \(P_2\):</p>
+        <p class="formula">$$
+            P_2 = P_1 + \tfrac12\,\rho\,(v_1^2 - v_2^2)
+            $$</p>
+        <p>Sustituyendo:</p>
+        <p class="formula">$$
+            P_2 = 200000 + \tfrac12\cdot1000\,(2^2 - 6^2)
+            = 200000 + 500\,(4 - 36)
+            = 184000\text{ Pa}
+            $$</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Aplicaciones</h2>
+        <ul>
+            <li><strong>Tubo de Venturi:</strong> mide caudal con cambios de presión.</li>
+            <li><strong>Tubo de Pitot:</strong> instrumentación en aviación para velocidad.</li>
+            <li><strong>Atomizadores:</strong> pulverización de líquidos.</li>
+            <li><strong>Sustentación aeronáutica:</strong> diferencias de presión en alas.</li>
+        </ul>
+    </section>
+</main>
+
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
 
 </body>
 </html>

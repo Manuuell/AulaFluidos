@@ -6,6 +6,8 @@
     <title>Propiedades de los Fluidos – Aula de Fluidos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/propiedades.css') }}">
+    <!-- MathJax para renderizar fórmulas LaTeX -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -44,7 +46,7 @@
     <section class="seccion">
         <h2>Densidad</h2>
         <p>La densidad <em>ρ</em> relaciona la masa <em>m</em> de un fluido con su volumen <em>V</em>:</p>
-        <p class="formula">ρ = m / V  &nbsp; [kg/m³]</p>
+        <p class="formula">$$\rho = \frac{m}{V}$$</p>
         <ul>
             <li>Determina cuán “compactas” están las moléculas.</li>
             <li>Agua dulce: ≈ 1000 kg/m³; aire a 20 °C: ≈ 1.2 kg/m³.</li>
@@ -56,7 +58,7 @@
         <p>La viscosidad mide la resistencia interna al flujo:</p>
         <ul>
             <li><strong>Viscosidad dinámica (μ):</strong> Relación entre esfuerzo cortante y gradiente de velocidad, en Pa·s.</li>
-            <li><strong>Viscosidad cinemática (ν):</strong> μ/ρ, en m²/s. Indica la difusión de momento.</li>
+            <li><strong>Viscosidad cinemática (ν):</strong> $$\nu = \frac{\mu}{\rho}$$, en m²/s. Indica la difusión de momento.</li>
         </ul>
         <p>Tipos de comportamiento:</p>
         <ul>
@@ -71,10 +73,10 @@
     <section class="seccion">
         <h2>Presión</h2>
         <p>La presión <em>p</em> es la fuerza normal por unidad de área:</p>
-        <p class="formula">p = F / A  &nbsp; [Pa]</p>
+        <p class="formula">$$p = \frac{F}{A}$$</p>
         <ul>
-            <li>Hidrostática: p = ρ·g·h (fluido en reposo).</li>
-            <li>Pascal: la presión se transmite íntegramente en todo fluido confinado.</li>
+            <li>Hidrostática: $$p = \rho\,g\,h$$ (fluido en reposo).</li>
+            <li>Principio de Pascal: la presión se transmite íntegramente en todo fluido confinado.</li>
         </ul>
     </section>
 
@@ -91,22 +93,21 @@
         <h2>Compresibilidad</h2>
         <p>Mide la variación de volumen frente a cambios de presión:</p>
         <ul>
-            <li><strong>Fluidos incompresibles:</strong> Volumen casi constante (líquidos).<br>
-                <em>ΔV ≈ 0</em></li>
+            <li><strong>Fluidos incompresibles:</strong> Volumen casi constante (líquidos). $$\Delta V \approx 0$$</li>
             <li><strong>Fluidos compresibles:</strong> Volumen variable (gases).</li>
+            <li><strong>Módulo volumétrico (K):</strong> $$K = -V \frac{dp}{dV}$$</li>
         </ul>
     </section>
 
-
     <section class="seccion">
         <h2>Ecuaciones Fundamentales</h2>
-        <p>El comportamiento global de un fluido se describe mediante las ecuaciones de Navier-Stokes:</p>
+        <p>El comportamiento global de un fluido se describe mediante las ecuaciones de Navier–Stokes:</p>
         <ul>
-            <li>Conservación de masa (continuidad).</li>
-            <li>Conservación de cantidad de movimiento.</li>
-            <li>Conservación de energía.</li>
+            <li><strong>Conservación de masa (continuidad):</strong> $$\frac{\partial \rho}{\partial t} + \nabla\!\cdot(\rho\,\mathbf v) = 0$$</li>
+            <li><strong>Conservación de cantidad de movimiento:</strong> $$\rho\frac{D\mathbf v}{Dt} = -\nabla p + \mu\nabla^2\mathbf v + \rho\mathbf g$$</li>
+            <li><strong>Conservación de energía:</strong> $$\frac{D}{Dt}\left(e + \tfrac12 v^2\right) = -\frac{p}{\rho}\nabla\!\cdot\mathbf v + \Phi$$</li>
         </ul>
-        <p>En casos ideales, se simplifican a la ecuación de Euler (sin viscosidad).</p>
+        <p>En casos ideales (sin viscosidad), se simplifican a la ecuación de Euler.</p>
     </section>
 </main>
 

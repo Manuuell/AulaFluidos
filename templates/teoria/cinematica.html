@@ -1,10 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cinemática de Fluidos – Aula de Fluidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cinematica.css') }}">
 </head>
 <body>
+
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría ▼</a>
+            <div class="dropdown-content">
+                <a href="/teoria/generalidades">Generalidades</a>
+                <a href="/teoria/propiedades">Propiedades</a>
+                <a href="/teoria/estatica">Estática</a>
+                <a href="/teoria/flotacion">Flotación</a>
+                <a href="/teoria/cinematica">Cinemática</a>
+                <a href="/teoria/bernoulli">Bernoulli</a>
+                <a href="/teoria/flujo_tuberias">Flujo en tuberías</a>
+                <a href="/teoria/maquinas_flujo">Máquinas de flujo</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/ejercicios">Calculadora</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+<main class="contenido">
+    <h1>Cinemática de Fluidos</h1>
+
+    <section class="seccion">
+        <h2>Introducción</h2>
+        <p>La cinematica de fluidos estudia el movimiento de los fluidos sin considerar las fuerzas que lo producen. Se centra en describir cómo varían la velocidad y la aceleración en el espacio y el tiempo.</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Descripción Lagrangiana vs. Euleriana</h2>
+        <ul>
+            <li><strong>Enfoque Lagrangiano:</strong> Se sigue a una partícula de fluido individual a lo largo de su trayectoria.</li>
+            <li><strong>Enfoque Euleriano:</strong> Se analiza el campo de velocidades y propiedades en puntos fijos del espacio.</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Líneas de Corriente, Trayectorias y Trazas</h2>
+        <ul>
+            <li><strong>Líneas de corriente:</strong> Curvas tangentes al vector velocidad en cada instante.</li>
+            <li><strong>Trayectoria:</strong> Camino seguido por una partícula de fluido a lo largo del tiempo.</li>
+            <li><strong>Trazas:</strong> Conjunto de posiciones ocupadas por partículas que pasan por un punto dado.</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Ecuación de Continuidad</h2>
+        <p>Conservación de masa en un campo de velocidad <em>v</em> y densidad <em>ρ</em>:</p>
+        <p class="formula">∂ρ/∂t + ∇·(ρ v) = 0</p>
+        <p>Para fluidos incompresibles (ρ constante):</p>
+        <p class="formula">∇·v = 0</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Aceleración del Fluido</h2>
+        <p>La aceleración de una partícula se compone de término local y convectivo:</p>
+        <p class="formula">a = Dv/Dt = ∂v/∂t + (v·∇)v</p>
+        <ul>
+            <li><strong>∂v/∂t</strong>: aceleración local (cambio en el tiempo).</li>
+            <li><strong>(v·∇)v</strong>: aceleración convectiva (cambio en el espacio).</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Patrones de Flujo</h2>
+        <p>Algunos ejemplos de patrones de flujo estudiados en cinematica:</p>
+        <ul>
+            <li><strong>Flujo uniforme:</strong> v constante en todo punto.</li>
+            <li><strong>Flujo acelerado:</strong> v cambia en el tiempo aunque ∇·v=0.</li>
+            <li><strong>Flujo rotacional:</strong> v tiene componente de rotación (curl v ≠ 0).</li>
+            <li><strong>Flujo irrotacional:</strong> curl v = 0.</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Ejemplo</h2>
+        <p>En un flujo unidimensional con v(x,t) = A x e<sup>–kt</sup>, la aceleración es:</p>
+        <p class="formula">a = ∂v/∂t + v ∂v/∂x = –kAx e<sup>–kt</sup> + (Ax e<sup>–kt</sup>)·A e<sup>–kt</sup></p>
+    </section>
+</main>
+
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
 
 </body>
 </html>

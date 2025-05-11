@@ -6,6 +6,8 @@
     <title>Estática de Fluidos – Aula de Fluidos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estatica.css') }}">
+    <!-- MathJax para renderizar fórmulas LaTeX -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -44,7 +46,7 @@
     <section class="seccion">
         <h2>Concepto de Presión</h2>
         <p>La <strong>presión</strong> en un punto de un fluido estático es la fuerza perpendicular por unidad de área, actuando en todas direcciones:</p>
-        <p class="formula">P = F / A &nbsp; [Pa]</p>
+        <p class="formula">$$P = \frac{F}{A} \quad [\text{Pa}]$$</p>
         <ul>
             <li>1 Pa = 1 N/m²</li>
             <li>En un fluido estático, la presión se transmite íntegramente en todas direcciones.</li>
@@ -54,11 +56,11 @@
     <section class="seccion">
         <h2>Presión Hidrostática</h2>
         <p>Debido al peso propio del fluido, la presión aumenta con la profundidad:</p>
-        <p class="formula">P = P₀ + ρ·g·h &nbsp; [Pa]</p>
+        <p class="formula">$$P = P_0 + \rho\,g\,h \quad [\text{Pa}]$$</p>
         <ul>
             <li><strong>P₀</strong>: presión en la superficie (normalmente atmosférica ≈ 101 325 Pa).</li>
             <li><strong>ρ·g·h</strong>: incremento hidrostático (ρ densidad, g gravedad, h profundidad).</li>
-            <li>Ejemplo: a 10 m de profundidad en agua (ρ=1000 kg/m³) → ΔP ≈ 98 100 Pa.</li>
+            <li>Ejemplo: a 10 m de profundidad en agua (ρ = 1000 kg/m³) → ΔP ≈ 98100 Pa.</li>
         </ul>
     </section>
 
@@ -74,7 +76,7 @@
     <section class="seccion">
         <h2>Principio de Arquímedes</h2>
         <p>Un cuerpo total o parcialmente sumergido en un fluido recibe un empuje igual al peso del volumen de fluido desplazado:</p>
-        <p class="formula">E = ρ·g·V &nbsp; [N]</p>
+        <p class="formula">$$E = \rho\,g\,V \quad [\text{N}]$$</p>
         <ul>
             <li>Explica la flotabilidad de barcos, globos y objetos sumergidos.</li>
             <li>V: volumen de fluido desplazado.</li>
@@ -84,20 +86,21 @@
     <section class="seccion">
         <h2>Instrumentos de Medición: Manómetros</h2>
         <p>Los manómetros miden la presión de un fluido mediante la altura de una columna de referencia:</p>
-        <p class="formula">ΔP = ρ·g·Δh</p>
+        <p class="formula">$$\Delta P = \rho\,g\,\Delta h$$</p>
         <ul>
             <li><strong>Tubo en U:</strong> comparación con presión atmosférica.</li>
             <li><strong>Diferencial:</strong> mide la diferencia de presión entre dos puntos.</li>
-            <li>Ejemplo: Δh=0.2 m de mercurio (ρ=13600 kg/m³) → ΔP ≈ 26 700 Pa.</li>
+            <li>Ejemplo: Δh = 0.2 m de mercurio (ρ = 13600 kg/m³) → ΔP ≈ 26700 Pa.</li>
         </ul>
     </section>
 
     <section class="seccion">
         <h2>Fuerzas sobre Superficies Planas</h2>
-        <p>Para una placa vertical sumergida de ancho b entre profundidades h₁ y h₂, la fuerza total es:</p>
-        <p class="formula">F = ρ·g·b·(h₂² – h₁²) / 2</p>
+        <p>Para una placa vertical sumergida de ancho <em>b</em> entre profundidades <em>h₁</em> y <em>h₂</em>, la fuerza total es:</p>
+        <p class="formula">$$F = \frac{\rho\,g\,b\,(h_2^2 - h_1^2)}{2}$$</p>
         <ul>
-            <li>h<sub>c</sub>, centro de presión: = 2(h₂³–h₁³)/[3(h₂²–h₁²)].</li>
+            <li><em>h<sub>c</sub></em>, centro de presión: <br>
+                $$h_c = \frac{2(h_2^3 - h_1^3)}{3(h_2^2 - h_1^2)}$$</li>
             <li>Importante en compuertas y muros de contención.</li>
         </ul>
     </section>
