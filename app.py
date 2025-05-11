@@ -34,6 +34,37 @@ def ejercicios():
 @app.route("/chat-page")
 def chat_page():
     return render_template("chat_page.html")
+@app.route("/teoria/generalidades")
+def teoria_generalidades():
+    return render_template("teoria/generalidades.html")
+
+@app.route("/teoria/propiedades")
+def teoria_propiedades():
+    return render_template("teoria/propiedades.html")
+
+@app.route("/teoria/estatica")
+def teoria_estatica():
+    return render_template("teoria/estatica.html")
+
+@app.route("/teoria/flotacion")
+def teoria_flotacion():
+    return render_template("teoria/flotacion.html")
+
+@app.route("/teoria/cinematica")
+def teoria_cinematica():
+    return render_template("teoria/cinematica.html")
+
+@app.route("/teoria/bernoulli")
+def teoria_bernoulli():
+    return render_template("teoria/bernoulli.html")
+
+@app.route("/teoria/flujo_tuberias")
+def teoria_flujo_tuberias():
+    return render_template("teoria/flujo_tuberias.html")
+
+@app.route("/teoria/maquinas_flujo")
+def teoria_maquinas_flujo():
+    return render_template("teoria/maquinas_flujo.html")
 
 # Endpoint de chat
 @app.route("/chat", methods=["POST"])
