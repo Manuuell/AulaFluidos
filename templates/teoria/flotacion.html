@@ -1,10 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Flotación y Estabilidad – Aula de Fluidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flotacion.css') }}">
 </head>
 <body>
+
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría ▼</a>
+            <div class="dropdown-content">
+                <a href="/teoria/generalidades">Generalidades</a>
+                <a href="/teoria/propiedades">Propiedades</a>
+                <a href="/teoria/estatica">Estática</a>
+                <a href="/teoria/flotacion">Flotación</a>
+                <a href="/teoria/cinematica">Cinemática</a>
+                <a href="/teoria/bernoulli">Bernoulli</a>
+                <a href="/teoria/flujo_tuberias">Flujo en tuberías</a>
+                <a href="/teoria/maquinas_flujo">Máquinas de flujo</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/ejercicios">Calculadora</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+<main class="contenido">
+    <h1>Flotación y Estabilidad de Cuerpos Flotantes</h1>
+
+    <section class="seccion">
+        <h2>Principio de Arquímedes</h2>
+        <p>Un cuerpo total o parcialmente sumergido en un fluido estático recibe un empuje hacia arriba igual al peso del volumen de fluido desplazado:</p>
+        <p class="formula">E = ρ·g·V<sub>d</sub>  &nbsp; [N]</p>
+        <ul>
+            <li><strong>ρ</strong>: densidad del fluido (kg/m³).</li>
+            <li><strong>g</strong>: aceleración de la gravedad (9.81 m/s²).</li>
+            <li><strong>V<sub>d</sub></strong>: volumen de fluido desplazado (m³).</li>
+        </ul>
+        <p>Este empuje explica por qué los barcos flotan y cómo varía la profundidad de flotación según la masa y forma del cuerpo.</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Centro de Gravedad y Centro de Flotación</h2>
+        <ul>
+            <li><strong>Centro de Gravedad (G):</strong> punto donde actúa el peso total del cuerpo.</li>
+            <li><strong>Centro de Flotación (C):</strong> centroide del área de la sección de flotación (línea de flotación).</li>
+        </ul>
+        <p>Para equilibrio, la línea de acción del empuje (desde el centro de flotación) debe pasar por G cuando el cuerpo está vertical.</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Metacentro y Metacentricidad</h2>
+        <p>Cuando un cuerpo se inclina una pequeña ángulo, el empuje se reconstruye y su línea pasa por un nuevo centro de flotación. El punto de intersección entre la línea de empuje original y la nueva es el <strong>Metacentro (M)</strong>. </p>
+        <p class="formula">GM = BM – BG</p>
+        <ul>
+            <li><strong>BM</strong> = Inercia de la sección de flotación / V<sub>d</sub>.</li>
+            <li><strong>BG</strong> = distancia vertical entre B (centro de empuje) y G.</li>
+            <li><strong>GM</strong> = altura metacéntrica; medida de estabilidad inicial.</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Tipos de Equilibrio</h2>
+        <ul>
+            <li><strong>Estable (GM > 0):</strong> al inclinarse, el metacentro queda por encima de G y el cuerpo retorna a posición vertical.</li>
+            <li><strong>Neutral (GM = 0):</strong> el cuerpo adopta la nueva posición sin tender a volver.</li>
+            <li><strong>Inestable (GM < 0):</strong> el cuerpo se vuelca al inclinarse.</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Ejemplo Numérico</h2>
+        <p>Un prisma de madera de densidad 600 kg/m³ flota en agua (ρ=1000 kg/m³). ¿Qué fracción de su volumen queda sumergida?</p>
+        <p class="formula">V<sub>d</sub> / V = ρ<sub>prisma</sub> / ρ<sub>agua</sub> = 600/1000 = 0.6</p>
+        <p>El 60 % del volumen queda sumergido, y el 40 % emerge sobre la superficie.</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Aplicaciones e Investigación</h2>
+        <ul>
+            <li>Diseño de cascos y rompeolas.</li>
+            <li>Estabilidad de plataformas marinas y boyas.</li>
+            <li>Análisis de flotación de cuerpos rígidos en fluidos no newtonianos.</li>
+        </ul>
+        <p>En investigaciones avanzadas, se estudia el comportamiento de flotación en fluidos estratificados o bajo efectos de corrientes.</p>
+    </section>
+</main>
+
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
 
 </body>
 </html>

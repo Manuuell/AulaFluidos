@@ -1,10 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generalidades – Aula de Fluidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/generalidades.css') }}">
 </head>
 <body>
+
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="/teoria/generalidades">Generalidades</a>
+                <a href="/teoria/propiedades">Propiedades de los fluidos</a>
+                <a href="/teoria/estatica">Estática</a>
+                <a href="/teoria/cinematica">Cinemática</a>
+                <a href="/teoria/bernoulli">Bernoulli</a>
+                <a href="/teoria/flujo_tuberias">Flujo en tuberías</a>
+                <a href="/teoria/maquinas_flujo">Máquinas de flujo</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/ejercicios">Calculadora</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+<main class="contenido">
+    <h1>Generalidades y Aplicaciones</h1>
+    <section class="seccion">
+        <h2>Introducción</h2>
+        <p>La Mecánica de Fluidos es una rama de la física que se ocupa del estudio del comportamiento de los líquidos y gases tanto en reposo (estática) como en movimiento (dinámica). Explora cómo estos fluidos reaccionan ante fuerzas aplicadas, cómo interactúan con diferentes materiales y superficies, y su importancia en múltiples áreas tecnológicas y científicas.</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Presentación del curso</h2>
+        <p>El propósito principal del curso de Mecánica de Fluidos es proporcionar una base sólida sobre las propiedades, leyes y aplicaciones fundamentales relacionadas con líquidos y gases. Durante el desarrollo del curso, los estudiantes adquirirán conocimientos sobre cómo describir, medir y predecir el comportamiento de fluidos, así como también comprenderán sus aplicaciones prácticas en diversas disciplinas de la ingeniería.</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Aplicaciones</h2>
+        <p>Las aplicaciones prácticas de la Mecánica de Fluidos son diversas y esenciales para múltiples sectores industriales y tecnológicos, tales como:
+
+        <ul>
+            <li><strong>Ingeniería hidráulica:</strong> Diseño de presas, canales y sistemas de distribución de agua.</li>
+            <li><strong>Ingeniería aeronáutica:</strong> Aerodinámica, diseño de aviones, drones y naves espaciales.</li>
+            <li><strong>Medicina y biotecnología:</strong> Diseño de sistemas cardiovasculares artificiales y análisis de fluidos corporales.</li>
+            <li><strong>Industria automotriz:</strong> Aerodinámica vehicular y sistemas de combustible.</li>
+            <li><strong>Energía renovable:</strong> Diseño y optimización de turbinas eólicas e hidroeléctricas.</li>
+            <li><strong>Industria química:</strong> Transporte y almacenamiento de fluidos reactivos y corrosivos.</li>
+        </ul>
+
+        </p>
+    </section>
+
+    <section class="seccion magnitudes">
+        <h2>Magnitudes Fundamentales</h2>
+        <p>Para comprender y trabajar con los fluidos, es esencial familiarizarse con ciertas magnitudes fundamentales:</p>
+        <ul>
+            <li><strong>Presión:</strong> Fuerza ejercida perpendicularmente por unidad de área.</li>
+            <li><strong>Volumen:</strong> Espacio que ocupa un fluido.</li>
+            <li><strong>Densidad:</strong> Cantidad de masa por unidad de volumen de un fluido.</li>
+            <li><strong>Caudal:</strong> Cantidad de fluido que fluye a través de un área determinada por unidad de tiempo.</li>
+            <li><strong>Viscosidad:</strong> Resistencia interna de un fluido a fluir.</li>
+        </ul>
+    </section>
+
+    <section class="seccion sistemas-unidades">
+        <h2>Sistemas de Unidades</h2>
+        <p>En la Mecánica de Fluidos se utilizan principalmente dos sistemas de unidades:</p>
+        <ul>
+            <li>
+                <strong>Sistema Internacional (SI):</strong>
+                Comúnmente utilizado en ciencia e ingeniería a nivel mundial.
+                Unidades fundamentales: metros (m), kilogramos (kg), segundos (s) y pascales (Pa).
+            </li>
+            <li>
+                <strong>Sistema Inglés:</strong>
+                Ampliamente usado en ciertas regiones y aplicaciones industriales específicas.
+                Unidades fundamentales: pies (ft), libras-masa (lbm), libras-fuerza (lbf), segundos (s) y psi (libra por pulgada cuadrada).
+            </li>
+        </ul>
+        <p>Es importante manejar con destreza ambos sistemas y entender claramente cómo convertir unidades de uno a otro.</p>
+    </section>
+
+
+    <section class="seccion conversion-unidades">
+        <h2>Conversión de Unidades</h2>
+        <p>La conversión de unidades es crucial en la Mecánica de Fluidos, debido a la diversidad internacional en la utilización de diferentes sistemas de medición. A continuación, algunos ejemplos comunes:</p>
+        <ul>
+            <li>
+                <strong>Presión:</strong>
+                <ul>
+                    <li>1 atmósfera (atm) = 101 325 Pascales (Pa)</li>
+                    <li>1 psi = 6 894.76 Pascales (Pa)</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Volumen:</strong>
+                <ul>
+                    <li>1 pie cúbico (ft³) = 0.0283168 metros cúbicos (m³)</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Densidad:</strong>
+                <ul>
+                    <li>1 libra-masa por pie cúbico (lbm/ft³) = 16.0185 kilogramos por metro cúbico (kg/m³)</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+
+    <section class="seccion sistemas">
+        <h2>Definición y Clasificación de Sistemas</h2>
+        <p>En Mecánica de Fluidos, definimos generalmente dos tipos de sistemas en función de su intercambio de masa:</p>
+        <ul>
+            <li>
+                <strong>Sistema cerrado:</strong>
+                No permite la entrada ni salida de masa, aunque sí puede intercambiar energía con el entorno.
+            </li>
+            <li>
+                <strong>Sistema abierto (volumen de control):</strong>
+                Existe un flujo continuo de masa y energía hacia y desde el sistema.
+            </li>
+        </ul>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
 
 </body>
 </html>

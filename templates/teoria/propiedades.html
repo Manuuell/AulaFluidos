@@ -1,10 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Propiedades de los Fluidos – Aula de Fluidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/propiedades.css') }}">
 </head>
 <body>
+
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría ▼</a>
+            <div class="dropdown-content">
+                <a href="/teoria/generalidades">Generalidades</a>
+                <a href="/teoria/propiedades">Propiedades de los fluidos</a>
+                <a href="/teoria/estatica">Estática de fluidos</a>
+                <a href="/teoria/flotacion">Flotación</a>
+                <a href="/teoria/cinematica">Cinemática</a>
+                <a href="/teoria/bernoulli">Bernoulli</a>
+                <a href="/teoria/flujo_tuberias">Flujo en tuberías</a>
+                <a href="/teoria/maquinas_flujo">Máquinas de flujo</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/ejercicios">Calculadora</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+<main class="contenido">
+    <h1>Propiedades de los Fluidos</h1>
+
+    <section class="seccion">
+        <h2>¿Qué es un Fluido?</h2>
+        <p>Un <strong>fluido</strong> es una sustancia (líquido, gas o plasma) que no ofrece resistencia a esfuerzos tangenciales estáticos y que, bajo una tensión de corte, se deforma de forma continua. A diferencia de los sólidos, los fluidos pueden fluir y adoptar la forma del recipiente que los contiene.</p>
+    </section>
+
+    <section class="seccion">
+        <h2>Densidad</h2>
+        <p>La densidad <em>ρ</em> relaciona la masa <em>m</em> de un fluido con su volumen <em>V</em>:</p>
+        <p class="formula">ρ = m / V  &nbsp; [kg/m³]</p>
+        <ul>
+            <li>Determina cuán “compactas” están las moléculas.</li>
+            <li>Agua dulce: ≈ 1000 kg/m³; aire a 20 °C: ≈ 1.2 kg/m³.</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Viscosidad</h2>
+        <p>La viscosidad mide la resistencia interna al flujo:</p>
+        <ul>
+            <li><strong>Viscosidad dinámica (μ):</strong> Relación entre esfuerzo cortante y gradiente de velocidad, en Pa·s.</li>
+            <li><strong>Viscosidad cinemática (ν):</strong> μ/ρ, en m²/s. Indica la difusión de momento.</li>
+        </ul>
+        <p>Tipos de comportamiento:</p>
+        <ul>
+            <li><strong>Newtonianos:</strong> μ constante (agua, aire).</li>
+            <li><strong>No-Newtonianos:</strong> μ varía con esfuerzo (pinturas, sangre).<br>
+                – <em>Shear thinning</em>: se adelgazan (yogur).<br>
+                – <em>Shear thickening</em>: se espesan (mezcla de maicena).<br>
+                – Plásticos de Bingham: requieren esfuerzo mínimo para fluir (miel espesa).</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Presión</h2>
+        <p>La presión <em>p</em> es la fuerza normal por unidad de área:</p>
+        <p class="formula">p = F / A  &nbsp; [Pa]</p>
+        <ul>
+            <li>Hidrostática: p = ρ·g·h (fluido en reposo).</li>
+            <li>Pascal: la presión se transmite íntegramente en todo fluido confinado.</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Tensión Superficial y Capilaridad</h2>
+        <p>Fenómenos de superficie:</p>
+        <ul>
+            <li><strong>Tensión superficial:</strong> Energía por unidad de área en la interfaz, en N/m.</li>
+            <li><strong>Capilaridad:</strong> Ascenso o descenso de un líquido en tubos finos, debido a adhesión/cohesión.</li>
+        </ul>
+    </section>
+
+    <section class="seccion">
+        <h2>Compresibilidad</h2>
+        <p>Mide la variación de volumen frente a cambios de presión:</p>
+        <ul>
+            <li><strong>Fluidos incompresibles:</strong> Volumen casi constante (líquidos).<br>
+                <em>ΔV ≈ 0</em></li>
+            <li><strong>Fluidos compresibles:</strong> Volumen variable (gases).</li>
+        </ul>
+    </section>
+
+
+    <section class="seccion">
+        <h2>Ecuaciones Fundamentales</h2>
+        <p>El comportamiento global de un fluido se describe mediante las ecuaciones de Navier-Stokes:</p>
+        <ul>
+            <li>Conservación de masa (continuidad).</li>
+            <li>Conservación de cantidad de movimiento.</li>
+            <li>Conservación de energía.</li>
+        </ul>
+        <p>En casos ideales, se simplifican a la ecuación de Euler (sin viscosidad).</p>
+    </section>
+</main>
+
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
 
 </body>
 </html>
