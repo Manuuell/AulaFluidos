@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
 <header class="navbar">
   <div class="logo">Aula de Fluidos</div>
   <nav class="menu">
@@ -25,15 +26,28 @@
       </div>
     </div>
     <a href="/simulaciones">Simulaciones</a>
+    <a href="/ejercicios">Calculadora</a>
     <a href="/chat-page">Chat de ayuda</a>
   </nav>
 </header>
 
-
 <main class="chat-page">
   <div class="chat-container">
-    <h2>Chat de ayuda</h2>
+    <!-- Encabezado con avatar y título -->
+    <div class="chat-header">
+      <img src="{{ url_for('static', filename='img/bot2.png') }}" alt="Bot Avatar" class="avatar-header">
+      <div class="chat-title-group">
+        <h2 class="chat-title">Chat de Ayuda</h2>
+        <p class="chat-subtitle">Asistente virtual en mecánica de fluidos</p>
+      </div>
+    </div>
+
+
+
+    <!-- Chat box -->
     <div id="chat-box" class="chat-box"></div>
+
+    <!-- Entrada -->
     <div class="chat-input">
       <textarea id="user-input" placeholder="Escribe tu pregunta..." rows="3"></textarea>
       <button onclick="sendMessage()">Enviar</button>
@@ -42,7 +56,6 @@
 </main>
 
 <script>
-
   async function sendMessage() {
     const input = document.getElementById("user-input");
     const message = input.value;
@@ -50,7 +63,11 @@
 
     if (!message.trim()) return;
 
-    chatBox.innerHTML += `<div class="message user-message"><strong>Tú:</strong> ${message}</div>`;
+    chatBox.innerHTML += `
+      <div class="message user-message">
+        <img src="{{ url_for('static', filename='img/user.png') }}" alt="Usuario" class="avatar">
+        <div><strong>Tú:</strong> ${message}</div>
+      </div>`;
     input.value = "";
 
     const res = await fetch("/chat", {
@@ -61,9 +78,17 @@
 
     const data = await res.json();
     if (data.reply) {
-      chatBox.innerHTML += `<div class="message bot-message"><strong>Bot:</strong> ${data.reply}</div>`;
+      chatBox.innerHTML += `
+        <div class="message bot-message">
+          <img src="{{ url_for('static', filename='img/bot2.png') }}" alt="Bot" class="avatar">
+          <div><strong>Bot:</strong> ${data.reply}</div>
+        </div>`;
     } else {
-      chatBox.innerHTML += `<div class="message bot-message"><strong>Bot:</strong> Error: ${data.error}</div>`;
+      chatBox.innerHTML += `
+        <div class="message bot-message">
+          <img src="{{ url_for('static', filename='img/bot.png') }}" alt="Bot" class="avatar">
+          <div><strong>Bot:</strong> Error: ${data.error}</div>
+        </div>`;
     }
 
     chatBox.scrollTop = chatBox.scrollHeight;

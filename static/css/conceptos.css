@@ -212,3 +212,14 @@ footer {
 
 /* El resto de tu código CSS permanece igual */
 
+/* ... (tu CSS anterior) ... */
+
+/* Descripciones bajo los títulos */
+.ejercicios .help-text {
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+

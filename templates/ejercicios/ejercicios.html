@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ejercicios – Aula de Fluidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ejercicios.css') }}">
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<header class="navbar">
+    <div class="logo">Aula de Fluidos</div>
+    <nav class="menu">
+        <a href="/">Inicio</a>
+        <a href="/conceptos">Conceptos</a>
+        <div class="dropdown">
+            <a href="#">Teoría ▼</a>
+            <div class="dropdown-content">
+                <a href="/conceptos#propiedades">Propiedades</a>
+                <a href="/conceptos#estatica">Estática</a>
+                <a href="/conceptos#cinematica">Cinemática</a>
+                <a href="/conceptos#dinamica">Dinámica</a>
+                <a href="/conceptos#dimension">Análisis dimensional</a>
+                <a href="/conceptos#tuberias">Tuberías</a>
+                <a href="/conceptos#canales">Canales abiertos</a>
+            </div>
+        </div>
+        <a href="/simulaciones">Simulaciones</a>
+        <a href="/ejercicios">Calculadora</a>
+        <a href="/chat-page">Chat de ayuda</a>
+    </nav>
+</header>
+
+<main class="ejercicios">
+    <h1>Calculadora Interactiva</h1>
+
+    <!-- Densidad -->
+    <section id="densidad">
+        <h2>Calculadora de Densidad</h2>
+        <form action="/calcular/densidad" method="post">
+            <label for="masa">Masa (kg):</label>
+            <input
+                    type="number"
+                    id="masa"
+                    name="masa"
+                    placeholder="Masa (kg)"
+                    step="any"
+                    required>
+            <label for="volumen">Volumen (m³):</label>
+            <input
+                    type="number"
+                    id="volumen"
+                    name="volumen"
+                    placeholder="Volumen (m³)"
+                    step="any"
+                    required>
+            <button type="submit">Calcular</button>
+        </form>
+        {% if resultado_densidad %}
+        <div class="resultado">
+            <strong>Resultado:</strong> {{ resultado_densidad }}
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Conversión de Unidades -->
+    <section id="conversion">
+        <h2>Conversión de Unidades</h2>
+        <form action="/convertir/unidades" method="post">
+            <label for="valor">Valor a convertir:</label>
+            <input
+                    type="number"
+                    id="valor"
+                    name="valor"
+                    placeholder="Valor"
+                    step="any"
+                    required>
+            <label for="magnitud">Magnitud:</label>
+            <select id="magnitud" name="magnitud" required>
+                <option value="">— Seleccione —</option>
+                <option value="presion">Presión</option>
+                <option value="volumen">Volumen</option>
+                <option value="longitud">Longitud</option>
+                <option value="densidad">Densidad</option>
+            </select>
+            <label for="unidad_origen">Unidad origen:</label>
+            <select id="unidad_origen" name="unidad_origen" required>
+                <option value="">— Origen —</option>
+                <option value="Pa">Pa</option>
+                <option value="atm">atm</option>
+                <option value="m3">m³</option>
+                <option value="ft3">ft³</option>
+            </select>
+            <label for="unidad_destino">Unidad destino:</label>
+            <select id="unidad_destino" name="unidad_destino" required>
+                <option value="">— Destino —</option>
+                <option value="Pa">Pa</option>
+                <option value="atm">atm</option>
+                <option value="m3">m³</option>
+                <option value="ft3">ft³</option>
+            </select>
+            <button type="submit">Convertir</button>
+        </form>
+        {% if resultado_conversion %}
+        <div class="resultado">
+            <strong>Resultado:</strong> {{ resultado_conversion }}
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Viscosidad -->
+    <section id="viscosidad">
+        <h2>Comparación de Viscosidad</h2>
+        <form action="/calcular/viscosidad" method="post">
+            <label for="visc_n">Viscosidad Newtoniana (Pa·s):</label>
+            <input
+                    type="number"
+                    id="visc_n"
+                    name="viscosidad_newtoniana"
+                    placeholder="Newtoniana (Pa·s)"
+                    step="any"
+                    required>
+            <label for="visc_nn">Viscosidad No-Newtoniana (Pa·s):</label>
+            <input
+                    type="number"
+                    id="visc_nn"
+                    name="viscosidad_nonewtoniana"
+                    placeholder="No-Newtoniana (Pa·s)"
+                    step="any"
+                    required>
+            <button type="submit">Comparar</button>
+        </form>
+        {% if resultado_viscosidad %}
+        <div class="resultado">
+            <strong>Resultado:</strong> {{ resultado_viscosidad }}
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Manómetro -->
+    <section id="manometro">
+        <h2>Manómetro</h2>
+        <form action="/calcular/presion" method="post">
+            <label for="profundidad">Profundidad (m):</label>
+            <input
+                    type="number"
+                    id="profundidad"
+                    name="profundidad"
+                    placeholder="Profundidad (m)"
+                    step="any"
+                    required>
+            <label for="densidad_man">Densidad (kg/m³):</label>
+            <input
+                    type="number"
+                    id="densidad_man"
+                    name="densidad"
+                    placeholder="Densidad (kg/m³)"
+                    step="any"
+                    required>
+            <button type="submit">Calcular Presión</button>
+        </form>
+        {% if resultado_presion %}
+        <div class="resultado">
+            <strong>Resultado:</strong> {{ resultado_presion }}
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Fuerza -->
+    <section id="fuerza">
+        <h2>Fuerza sobre Superficie</h2>
+        <form action="/calcular/fuerza" method="post">
+            <label for="area">Área (m²):</label>
+            <input
+                    type="number"
+                    id="area"
+                    name="area"
+                    placeholder="Área (m²)"
+                    step="any"
+                    required>
+            <label for="prof_media">Profundidad media (m):</label>
+            <input
+                    type="number"
+                    id="prof_media"
+                    name="profundidad_media"
+                    placeholder="Profundidad media (m)"
+                    step="any"
+                    required>
+            <label for="densidad_f">Densidad (kg/m³):</label>
+            <input
+                    type="number"
+                    id="densidad_f"
+                    name="densidad_f"
+                    placeholder="Densidad (kg/m³)"
+                    step="any"
+                    required>
+            <button type="submit">Calcular Fuerza</button>
+        </form>
+        {% if resultado_fuerza %}
+        <div class="resultado">
+            <strong>Resultado:</strong> {{ resultado_fuerza }}
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Bernoulli -->
+    <section id="bernoulli">
+        <h2>Ecuación de Bernoulli</h2>
+        <form action="/calcular/bernoulli" method="post">
+            <label for="p1">p₁ (Pa):</label>
+            <input
+                    type="number"
+                    id="p1"
+                    name="p1"
+                    placeholder="Presión p₁ (Pa)"
+                    step="any"
+                    required>
+            <label for="v1">v₁ (m/s):</label>
+            <input
+                    type="number"
+                    id="v1"
+                    name="v1"
+                    placeholder="Velocidad v₁ (m/s)"
+                    step="any"
+                    required>
+            <label for="p2">p₂ (Pa):</label>
+            <input
+                    type="number"
+                    id="p2"
+                    name="p2"
+                    placeholder="Presión p₂ (Pa)"
+                    step="any"
+                    required>
+            <button type="submit">Calcular v₂</button>
+        </form>
+        {% if resultado_bernoulli %}
+        <div class="resultado">
+            <strong>Resultado:</strong> {{ resultado_bernoulli }}
+        </div>
+        {% endif %}
+    </section>
+
+    <!-- Resto de secciones... -->
+
+</main>
+
+<footer class="footer">
+    © 2025 Universidad Tecnológica de Bolívar – Mecánica de Fluidos
+</footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+/* static/css/ejercicios.css */
+
+.ejercicios {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.ejercicios h1 {
+    font-size: 2.5rem;
+    color: #005f99;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Cada sección como tarjeta */
+.ejercicios section {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.ejercicios section h2 {
+    font-size: 1.75rem;
+    color: #005f99;
+    margin-bottom: 1rem;
+}
+
+/* Formulario en grid */
+.ejercicios form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: end;
+}
+
+/* Etiquetas y campos */
+.ejercicios label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.ejercicios input,
+.ejercicios select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.ejercicios input:focus,
+.ejercicios select:focus {
+    outline: none;
+    border-color: #005f99;
+}
+
+/* Botón de submit */
+.ejercicios button {
+    grid-column: 1 / -1;
+    padding: 0.75rem;
+    background: #005f99;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ejercicios button:hover {
+    background: #004f7a;
+}
+
+/* Ajustes solo para el resultado */
+.ejercicios .resultado {
+    grid-column: 1 / -1;
+    background: #cce5ff;          /* tono azul claro más vivo */
+    border-left: 6px solid #004f7a; /* azul oscuro */
+    color: #004f7a;               /* texto en azul oscuro */
+    padding: 1rem 1.25rem;        /* un poco más de espacio */
+    margin-top: 1.5rem;           /* separación extra */
+    border-radius: 0 4px 4px 0;   /* esquinas redondeadas solo por la derecha */
+    font-size: 1.1rem;            /* texto ligeramente más grande */
+    font-weight: 600;             /* más grueso */
+}
+
+
+/* Responsive: formulario en una columna en pantallas pequeñas */
+@media (max-width: 768px) {
+    .ejercicios form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+}
+
+
+body {
+    padding-top: 60px;
+}
+
+
+.ejercicios {
+    margin-top: 20px;
+}
