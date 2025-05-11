@@ -57,3 +57,13 @@
    ```bash
    git clone https://github.com/Manuuell/AulaFluidos.git
    cd AulaFluidos
+
+2. Crea y activa un entorno virtual:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate     # Linux / macOS
+   .venv\Scripts\activate        # Windows
+
+3. Instala dependencias
+   ```bash
+   pip install -r requirements.txt
