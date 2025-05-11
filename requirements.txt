@@ -1,5 +1,7 @@
 Flask>=2.2.0
-openai>=0.27.0        # si sigues usando la API de OpenAI
+openai>=0.28.0
 python-dotenv>=1.0.0
 matplotlib>=3.5.0
-plotly>=5.0.0         # opcional, si eliges gráficos interactivos
+plotly>=5.0.0
+
+

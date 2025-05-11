@@ -66,7 +66,7 @@ def teoria_flujo_tuberias():
 def teoria_maquinas_flujo():
     return render_template("teoria/maquinas_flujo.html")
 
-# Endpoint de chat
+# Endpoint de chatgpt
 @app.route("/chat", methods=["POST"])
 def chat():
     user_input = request.json.get("message")
@@ -74,7 +74,7 @@ def chat():
         resp = openai.ChatCompletion.create(
             model="gpt-4o",
             messages=[
-                {"role": "system", "content": "Eres un asistente útil para estudiantes de mecánica de fluidos."},
+                {"role": "system", "content": "Eres un asistente útil para estudiantes de mecánica de fluidos."}, # prompt para el chatbot
                 {"role": "user", "content": user_input}
             ],
             temperature=0.5,
@@ -107,7 +107,6 @@ def convertir_unidades():
             convertido = valor / 101325
         elif origen == "atm" and destino == "Pa":
             convertido = valor * 101325
-    # más conversiones pueden añadirse aquí…
     return render_template("ejercicios/ejercicios.html",
                            resultado_conversion=f"{convertido:.0f} {destino}")
 

@@ -15,7 +15,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -44,31 +44,30 @@ body {
     font-weight: 500;
 }
 
-/* Hero section */
-/* Hero section */
+
 /* Hero section */
 .hero {
     text-align: center;
     padding: 4em 2em;
     background-color: rgba(0, 0, 0, 0.4);
-    min-height: calc(100vh - 200px); /* Ajusta la altura de la sección */
+    min-height: calc(100vh - 200px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%; /* Asegura que la sección ocupe todo el ancho */
-    margin-top: 100px; /* Asegura que la sección no se solape con la barra de navegación */
+    width: 100%;
+    margin-top: 100px;
 }
 
 /* Hero heading */
 .hero h1 {
-    font-size: 3em; /* Ajusta el tamaño del texto */
+    font-size: 3em;
     margin-bottom: 0.5em;
     text-align: center;
     color: white;
     font-weight: bold;
     line-height: 1.2;
-    padding: 0 10px; /* Agrega relleno para mejorar la legibilidad */
+    padding: 0 10px;
 }
 
 /* Hero paragraph */
@@ -87,7 +86,7 @@ body {
     padding: 2em;
     margin-top: 3em;
     width: 100%;
-    margin-bottom: 2em; /* Added margin to prevent overlap */
+    margin-bottom: 2em;
 }
 
 /* Card styles */
@@ -126,17 +125,17 @@ body {
     text-align: center;
     padding: 1em;
     font-size: 0.9em;
-    width: 100%; /* Ensures it spans the entire width */
+    width: 100%;
     margin-top: auto;
 }
 
-/* Ensure no overflow occurs */
+
 html, body {
     height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
-/* Remove the horizontal scroll bar */
+
 body {
     overflow-x: hidden;
 }
@@ -189,10 +188,10 @@ body {
 
 /* User message styling */
 .user-message {
-    background-color: #007bff; /* Azul para el mensaje del usuario */
+    background-color: #007bff;
     color: white;
     margin-left: auto;
-    font-weight: bold; /* Texto en negrita */
+    font-weight: bold;
 }
 
 /* Bot message styling */
@@ -355,7 +354,7 @@ button {
     align-items: center;
     gap: 1.5em;
     margin-bottom: 2em;
-    background: #fff; /* Fondo blanco para las tarjetas */
+    background: #fff;
     border-radius: 12px;
     padding: 2em;
     width: 100%;
@@ -379,18 +378,18 @@ button {
 /* Card content */
 .sim-content {
     text-align: center;
-    color: #333; /* Color oscuro para el texto */
+    color: #333;
 }
 
 .sim-content h3 {
     font-size: 1.4em;
-    color: #003f91; /* Azul para los títulos */
+    color: #003f91;
     margin-bottom: 1em;
 }
 
 .sim-content p {
     font-size: 1em;
-    color: #666; /* Gris para el texto de la descripción */
+    color: #666;
     margin-bottom: 1.5em;
 }
 
@@ -445,10 +444,10 @@ button {
     padding: 1em 2em;
     width: 100%;
     box-sizing: border-box;
-    position: fixed; /* Fija la barra en la parte superior */
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Asegura que la barra esté por encima de otros contenidos */
+    z-index: 1000;
 }
 
 /* Dropdown container */
@@ -503,5 +502,5 @@ button {
     transform: rotate(180deg);
 }
 
-/* El resto de tu código CSS permanece igual */
+
 
